@@ -10,10 +10,10 @@ public class RegistrationPO {
     By heading = By.className("page-heading");
     By breadcrumbs = By.className("navigation_page");
     By subHeadingRegistration = By.className("page-subheading");
-    By enterEmailText = By.className("form_content clearfix");
-    By emailText = By.className("form-group form-error");
+    By enterEmailText = By.cssSelector(".form_content.clearfix");
+    By emailText = By.cssSelector(".form-group.form-error");
     By emailInput = By.id("email_create");
-    By alertError = By.className("alert alert-danger");
+    By alertError = By.cssSelector(".alert.alert-danger");
     By createButton = By.id("SubmitCreate");
 
 
