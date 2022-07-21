@@ -26,6 +26,7 @@ public class SearchTests {
         System.setProperty("webdriver.chrome.driver", "/Users/marioracek/Documents/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
+        driver.manage().window().maximize();
         driver.get("http://automationpractice.com/index.php");
     }
 
