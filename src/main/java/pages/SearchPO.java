@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class SearchPO {
 
@@ -17,10 +18,10 @@ public class SearchPO {
     By sortBy = By.id("selectProductSort");
     By viewList = By.id("list");
     By viewGrid = By.id("grid");
-    By compareButton = By.partialLinkText("Compare");
-    By productContainer = By.className("product-container");
-    By productImageContainer = By.className("product-image-container");
-    By productName = By.cssSelector(".product-container .product-name");
+    By productContainerGrid = By.cssSelector(".product_list.grid.row .product-container");
+    By productContainerList = By.cssSelector(".product_list.row.list .product-container");
+    By productImageContainer = By.cssSelector(".product-container .product-image-container");
+    By firstProductName = By.cssSelector("#center_column > ul > li:first-of-type > .product-container .product-name");
 
     public SearchPO(WebDriver driver) {
         this.driver = driver;
@@ -44,5 +45,51 @@ public class SearchPO {
 
     public String getBreadcrumbsText() {
         return driver.findElement(breadcrumbs).getText();
+    }
+
+    public String getSearchPhrase() {
+        return driver.findElement(searchPhrase).getText();
+    }
+
+    public int getNumberOfSearchedElements() {
+        return driver.findElements(productContainerGrid).size();
+    }
+
+    public String getCountOfResults() {
+        return driver.findElement(resultsCounter).getText();
+    }
+
+    public void changeView(String view) {
+        switch (view) {
+            case "Grid":
+                driver.findElement(viewGrid).click();
+                break;
+            case "List":
+                driver.findElement(viewList).click();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void selectSort(String sort) {
+        Select dropdown = new Select(driver.findElement(sortBy));
+        dropdown.selectByValue(sort);
+    }
+
+    public String getFirstProductName() {
+        return driver.findElement(firstProductName).getText();
+    }
+
+    public Boolean isListViewDisplayed() {
+        return driver.findElement(productContainerList).isDisplayed();
+    }
+
+    public Boolean isGridViewDisplayed() {
+        return driver.findElement(productContainerGrid).isDisplayed();
+    }
+
+    public int getNumberOfImages() {
+        return driver.findElements(productImageContainer).size();
     }
 }
