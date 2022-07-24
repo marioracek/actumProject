@@ -12,8 +12,6 @@ public class RegistrationPO {
     By headingElement = By.className("page-heading");
     By breadcrumbsElement = By.className("navigation_page");
     By subHeadingRegistrationElement = By.className("page-subheading");
-    By enterEmailTextElement = By.cssSelector(".form_content.clearfix");
-    By emailTextElement = By.cssSelector(".form-group.form-error");
     By emailInputElement = By.id("email_create");
     By alertErrorElement = By.cssSelector(".alert.alert-danger");
     By createButtonElement = By.id("SubmitCreate");
@@ -32,13 +30,11 @@ public class RegistrationPO {
     By firstNameAddressElement = By.id("firstname");
     By lastNameAddressElement = By.id("lastname");
     By address1Element = By.id("address1");
-    By address2Element = By.id("address2");
     By cityElement = By.id("city");
     By countrySelectElement = By.id("id_country");
     By stateSelectElement = By.id("id_state");
     By additionalInfoElement = By.id("other");
     By postcodeElement = By.id("postcode");
-    By phoneElement = By.id("phone");
     By phoneMobileElement = By.id("phone_mobile");
     By aliasReferenceElement = By.id("alias");
     By registerButtonElement = By.id("submitAccount");
@@ -118,10 +114,6 @@ public class RegistrationPO {
         driver.findElement(address1Element).sendKeys(address);
     }
 
-    public void enterAddressLine2(String address) {
-        driver.findElement(address2Element).sendKeys(address);
-    }
-
     public void enterCity(String cityToEnter) {
         driver.findElement(cityElement).sendKeys(cityToEnter);
     }
@@ -138,10 +130,6 @@ public class RegistrationPO {
 
     public void enterAdditionalInfo(String info) {
         driver.findElement(additionalInfoElement).sendKeys(info);
-    }
-
-    public void enterPhone(String phone) {
-        driver.findElement(phoneElement).sendKeys(phone);
     }
 
     public void enterMobilePhone(String mobilePhone) {

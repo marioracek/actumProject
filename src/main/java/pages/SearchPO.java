@@ -51,7 +51,7 @@ public class SearchPO {
         return driver.findElement(searchPhrase).getText();
     }
 
-    public int getNumberOfSearchedElements() {
+    public int getNumberOfReturnedElements() {
         return driver.findElements(productContainerGrid).size();
     }
 

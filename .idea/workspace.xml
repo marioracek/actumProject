@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a69bcf9-97e5-4891-b795-48e89d77271e" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/HelloWorld.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/project/ProjectDemo.java" afterDir="false" />
+    <list default="true" id="8a69bcf9-97e5-4891-b795-48e89d77271e" name="Changes" comment="RegistrationPO and RegistrationTests added tests">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CartPO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/RegistrationPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/RegistrationPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchPO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CartTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactUsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactUsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RegistrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,19 +46,27 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/marioracek/IdeaProjects/actumProject/src/test/java/tests&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="project.HelloWorld" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.RegistrationTests">
+    <configuration name="CartTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tests.CartTests" />
       <module name="actumProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="project.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -59,9 +74,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.HelloWorld" />
+      <module name="actumProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContactUsTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="actumProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ContactUsTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistrationTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="actumProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RegistrationTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="actumProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloWorld" />
+        <item itemvalue="TestNG.RegistrationTests" />
+        <item itemvalue="TestNG.ContactUsTests" />
+        <item itemvalue="TestNG.SearchTests" />
+        <item itemvalue="Application.CartTests" />
       </list>
     </recent_temporary>
   </component>
@@ -81,7 +163,70 @@
       <option name="project" value="LOCAL" />
       <updated>1658170555292</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added selenium dependency and created initial project package">
+      <created>1658173080458</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658173080458</updated>
+    </task>
+    <task id="LOCAL-00003" summary="basic project structure created">
+      <created>1658178376293</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658178376293</updated>
+    </task>
+    <task id="LOCAL-00004" summary="testNG added, basic PO elements initialized">
+      <created>1658329072476</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658329072476</updated>
+    </task>
+    <task id="LOCAL-00005" summary="changed className to cssSelector, SearchTests implementation">
+      <created>1658349323173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658349323173</updated>
+    </task>
+    <task id="LOCAL-00006" summary="searchPO and SearchTests implemented">
+      <created>1658406975135</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1658406975135</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changed name of searchPO">
+      <created>1658407223302</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1658407223302</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ContactUsPO and ContactUsTests implemented">
+      <created>1658411620083</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1658411620083</updated>
+    </task>
+    <task id="LOCAL-00009" summary="RegistrationPO and RegistrationTests implementation">
+      <created>1658438651070</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658438651070</updated>
+    </task>
+    <task id="LOCAL-00010" summary="RegistrationPO and RegistrationTests added tests">
+      <created>1658696717161</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658696717161</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +242,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="added selenium dependency and created initial project package" />
+    <MESSAGE value="basic project structure created" />
+    <MESSAGE value="testNG added, basic PO elements initialized" />
+    <MESSAGE value="changed className to cssSelector, SearchTests implementation" />
+    <MESSAGE value="searchPO and SearchTests implemented" />
+    <MESSAGE value="changed name of searchPO" />
+    <MESSAGE value="ContactUsPO and ContactUsTests implemented" />
+    <MESSAGE value="RegistrationPO and RegistrationTests implementation" />
+    <MESSAGE value="RegistrationPO and RegistrationTests added tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="RegistrationPO and RegistrationTests added tests" />
   </component>
 </project>

@@ -31,7 +31,7 @@ public class SearchTests {
     }
 
     @Test
-    public void searchEmptyAndCheckPage() {
+    public void testSearchEmptyAndCheckPage() {
         searchPO = new SearchPO(driver);
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(By.name("submit_search")));
         searchPO.clickOnSearchButton();
@@ -41,7 +41,7 @@ public class SearchTests {
     }
 
     @Test(priority = 1)
-    public void searchItemAndCheck() {
+    public void testSearchItemAndCheckPage() {
         searchPO = new SearchPO(driver);
         searchPO.enterSearchText("PRINTED CHIFFON DRESS");
         searchPO.clickOnSearchButton();
@@ -51,19 +51,19 @@ public class SearchTests {
         assertEquals(searchPO.getFirstProductName(), "Printed Chiffon Dress", "First product name match");
         assertTrue(searchPO.getSearchPhrase().contains("PRINTED CHIFFON DRESS"), "Search phrase match actual phrase");
         assertTrue(searchPO.getCountOfResults().contains("2"), "Results counter shows correct value");
-        assertEquals(searchPO.getNumberOfSearchedElements(), 2, "Number of products visible on page is correct");
+        assertEquals(searchPO.getNumberOfReturnedElements(), 2, "Number of products visible on page is correct");
         assertEquals(searchPO.getNumberOfImages(), 2, "Number of images visible on page is correct");
     }
 
     @Test(priority = 2)
-    public void checkViewChange() {
+    public void testViewChange() {
         assertTrue(searchPO.isGridViewDisplayed(), "Grid view displayed");
         searchPO.changeView("List");
         assertTrue(searchPO.isListViewDisplayed(), "List view displayed");
     }
 
     @Test(priority = 2)
-    public void checkSorting() {
+    public void testSorting() {
         searchPO = new SearchPO(driver);
         searchPO.selectSort("name:desc");
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(By.className("product-container")));

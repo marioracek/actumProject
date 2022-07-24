@@ -42,7 +42,7 @@ public class ContactUsTests {
     }
 
     @Test
-    public void testSendForm() {
+    public void testCorrectlyFilledForm() {
         contactUsPO = new ContactUsPO(driver);
         contactUsPO.enterOrderReference("12345");
         contactUsPO.enterEmailAddress("mario.racek@gmail.com");

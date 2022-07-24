@@ -21,7 +21,7 @@ public class RegistrationTests {
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webriver.chrome.driver", "/Users/marioracek/Documents/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/marioracek/Documents/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         driver.manage().window().maximize();
@@ -29,7 +29,7 @@ public class RegistrationTests {
     }
 
     @Test(priority = 2)
-    public void checkCorrectInputs() {
+    public void testCorrectInputs() {
         registrationPO = new RegistrationPO(driver);
         registrationPO.clickOnSignIn();
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
@@ -62,7 +62,7 @@ public class RegistrationTests {
     }
 
     @Test
-    public void checkIncorrectEmailAddress() {
+    public void testIncorrectEmailAddress() {
         registrationPO = new RegistrationPO(driver);
         registrationPO.clickOnSignIn();
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
@@ -76,7 +76,7 @@ public class RegistrationTests {
     }
 
     @Test(priority = 1)
-    public void checkMandatoryInputs() {
+    public void testMandatoryInputs() {
         registrationPO = new RegistrationPO(driver);
         registrationPO.clickOnSignIn();
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
