@@ -168,4 +168,8 @@ public class RegistrationPO {
     public void enterAliasReference(String reference) {
         driver.findElement(aliasReferenceElement).sendKeys(reference);
     }
+
+    public String checkAlertError() {
+        return driver.findElement(alertErrorElement).getText();
+    }
 }

@@ -28,14 +28,14 @@ public class RegistrationTests {
         driver.get("http://automationpractice.com/index.php");
     }
 
-    @Test
+    @Test(priority = 2)
     public void checkCorrectInputs() {
         registrationPO = new RegistrationPO(driver);
         registrationPO.clickOnSignIn();
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
         checkCorrectPage("AUTHENTICATION", "Authentication");
         assertEquals(registrationPO.getSubHeadingText(), "CREATE AN ACCOUNT", "Create an account text is correct");
-        registrationPO.enterEmailCreateAccount("mario.racek@seznam.fr");
+        registrationPO.enterEmailCreateAccount("mario.racek@seznam.se");
         registrationPO.clickCreateAnAccount();
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("account-creation_form")));
         checkCorrectPage("CREATE AN ACCOUNT", "Authentication");
@@ -59,6 +59,51 @@ public class RegistrationTests {
         registrationPO.enterAliasReference("moja");
         registrationPO.clickRegisterButton();
         checkCorrectPage("MY ACCOUNT", "My account");
+    }
+
+    @Test
+    public void checkIncorrectEmailAddress() {
+        registrationPO = new RegistrationPO(driver);
+        registrationPO.clickOnSignIn();
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
+        checkCorrectPage("AUTHENTICATION", "Authentication");
+        assertEquals(registrationPO.getSubHeadingText(), "CREATE AN ACCOUNT", "Create an account text is correct");
+        registrationPO.enterEmailCreateAccount("incorrectEmailAddress@com");
+        registrationPO.clickCreateAnAccount();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        System.out.println(driver.findElement(By.id("email_create")).getAttribute("class"));
+        assertEquals(driver.findElement(By.id("email_create")).getAttribute("class"), "is_required validate account_input form-control");
+    }
+
+    @Test(priority = 1)
+    public void checkMandatoryInputs() {
+        registrationPO = new RegistrationPO(driver);
+        registrationPO.clickOnSignIn();
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
+        checkCorrectPage("AUTHENTICATION", "Authentication");
+        assertEquals(registrationPO.getSubHeadingText(), "CREATE AN ACCOUNT", "Create an account text is correct");
+        registrationPO.enterEmailCreateAccount("mario.racek@gmail.fr");
+        registrationPO.clickCreateAnAccount();
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("account-creation_form")));
+        checkCorrectPage("CREATE AN ACCOUNT", "Authentication");
+        assertEquals(registrationPO.getSubHeadingText(), "YOUR PERSONAL INFORMATION", "Create an account text is correct");
+        registrationPO.enterGender("Mr.");
+        registrationPO.enterPassword("password");
+        registrationPO.enterDateOfBirth("1991", "11", "11");
+        registrationPO.checkNewsletter();
+        registrationPO.checkSpecialOffer();
+        registrationPO.enterFirstNameAddress("Mario");
+        registrationPO.enterLastNameAddress("Racek");
+        registrationPO.enterAddressLine1("Sturova 11");
+        registrationPO.enterCity("Singapur");
+        registrationPO.selectCountry("21");
+        registrationPO.selectState("8");
+        registrationPO.enterPostalCode("14900");
+        registrationPO.enterAdditionalInfo("Info");
+        registrationPO.enterMobilePhone("123456789");
+        registrationPO.enterAliasReference("moja");
+        registrationPO.clickRegisterButton();
+        assertEquals(registrationPO.checkAlertError(), "There are 2 errors" + "\n" + "lastname is required.\n" + "firstname is required.", "Alert is visible and have correct text");
     }
 
     public void checkCorrectPage(String heading, String breadcrumb) {
