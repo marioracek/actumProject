@@ -1,5 +1,6 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,7 +23,7 @@ public class ContactUsTests {
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "/Users/marioracek/Documents/chromedriver");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         driver.manage().window().maximize();
@@ -44,6 +45,9 @@ public class ContactUsTests {
     @Test
     public void testCorrectlyFilledForm() {
         contactUsPO = new ContactUsPO(driver);
+        contactUsPO.clickOnContactUs();
+        assertTrue(contactUsPO.getHeadingText().contains("CUSTOMER SERVICE - CONTACT US"), "Heading has correct text");
+        assertTrue(contactUsPO.getBreadcrumbsText().contains("Contact"), "Breadcrumbs have correct text");
         contactUsPO.enterOrderReference("12345");
         contactUsPO.enterEmailAddress("mario.racek@gmail.com");
         contactUsPO.enterMessage("Testing message");

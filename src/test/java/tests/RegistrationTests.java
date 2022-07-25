@@ -1,5 +1,6 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +22,7 @@ public class RegistrationTests {
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "/Users/marioracek/Documents/chromedriver");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         driver.manage().window().maximize();
@@ -35,7 +36,7 @@ public class RegistrationTests {
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
         checkCorrectPage("AUTHENTICATION", "Authentication");
         assertEquals(registrationPO.getSubHeadingText(), "CREATE AN ACCOUNT", "Create an account text is correct");
-        registrationPO.enterEmailCreateAccount("mario.racek@seznam.se");
+        registrationPO.enterEmailCreateAccount("mario.racek@seznam.fi");
         registrationPO.clickCreateAnAccount();
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("account-creation_form")));
         checkCorrectPage("CREATE AN ACCOUNT", "Authentication");
@@ -82,7 +83,7 @@ public class RegistrationTests {
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("create-account_form")));
         checkCorrectPage("AUTHENTICATION", "Authentication");
         assertEquals(registrationPO.getSubHeadingText(), "CREATE AN ACCOUNT", "Create an account text is correct");
-        registrationPO.enterEmailCreateAccount("mario.racek@gmail.fr");
+        registrationPO.enterEmailCreateAccount("mario.racek@gmail.co");
         registrationPO.clickCreateAnAccount();
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(By.id("account-creation_form")));
         checkCorrectPage("CREATE AN ACCOUNT", "Authentication");
