@@ -8,6 +8,7 @@ public class ContactUsPO {
 
     WebDriver driver;
 
+    //TODO test commit email
     By emailInput = By.id("email");
     By contactLink = By.id("contact-link");
     By orderReferenceInput = By.id("id_order");
